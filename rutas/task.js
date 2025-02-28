@@ -32,6 +32,16 @@ ruta.put("/:id", async function (req, res, next) {
   }
 });
 
+ruta.put("/complete/:id", async function (req, res, next) {
+  try {
+    const { id } = req.params; 
+    await memoryTask.completeTask(id);
+    res.status(200).json(id);
+  } catch (err) {
+    next();
+  }
+});
+
 ruta.delete("/:id", async function (req, res, next) {
   try {
     const { id } = req.params;

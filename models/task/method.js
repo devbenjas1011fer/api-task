@@ -55,7 +55,20 @@ const updateTask = async (id, newData) => {
       task.id === id ? { ...task, ...newData } : task
     );
     await writeTasks(tasks);
-    return id ;
+    return id;
+  } catch (err) {
+    throw "Error";
+  }
+};
+//Completar
+const completeTask = async (id, newData) => {
+  try {
+    let tasks = readTasks();
+    tasks = tasks.map((task) =>
+      task.id === id ? { ...task, ...newData } : task
+    );
+    await writeTasks(tasks);
+    return id;
   } catch (err) {
     throw "Error";
   }
@@ -78,4 +91,5 @@ module.exports = {
   getAllTasks,
   updateTask,
   deleteTask,
+  completeTask,
 };
