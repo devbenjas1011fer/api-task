@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "command":"npm run dev",
+            "command":"nodemon app",
             "type": "node-terminal",
             "request": "launch",
             "name": "api-task", 

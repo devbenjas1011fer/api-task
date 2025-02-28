@@ -1,7 +1,7 @@
 const express=require('express');
 const path=require('path');
 const session=require('express-session');
-const _ = require('./rutas/home_ruta');
+const _ = require('./rutas/home');
 const login = require('./rutas/login');
 const task = require('./rutas/task');
 
