@@ -21,19 +21,20 @@ ruta.post("/", async function (req, res, next) {
   }
 });
 
-ruta.put("/", async function (req, res, next) {
+ruta.put("/:id", async function (req, res, next) {
   try {
-    const { id, task } = req.body;
-    await memoryTask.updateTask(id, task);
-    res.status(200).json();
+    const { id } = req.params;
+    const { title, description } = req.body;
+    await memoryTask.updateTask(id, {titulo:title, descripcion:description});
+    res.status(200).json(id);
   } catch (err) {
     next();
   }
 });
 
-ruta.delete("/", async function (req, res, next) {
+ruta.delete("/:id", async function (req, res, next) {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
     await memoryTask.deleteTask(id);
     res.status(200).json();
   } catch (err) {
