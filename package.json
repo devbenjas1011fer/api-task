@@ -1,0 +1,22 @@
+{
+  "name": "api-task",
+  "version": "1.0.0",
+  "description": "API REST de una lista de tareas  construida con Node.js y Express, que permite gestionar tareas en memoria mediante operaciones CRUD.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devbenjas1011fer/api-task.git"
+  },
+  "author": "Fernando Reséndiz Mendoza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devbenjas1011fer/api-task/issues"
+  },
+  "homepage": "https://github.com/devbenjas1011fer/api-task#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
