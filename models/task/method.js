@@ -3,8 +3,8 @@ const path = require('path');
 const Task = require('./task');
 const { v4: uuidv4 } = require('uuid');
 
-const filePath = path.join(__dirname, '../config.json');
-
+const filePath = path.join(process.cwd(), 'memory.json');
+console.log(filePath)
 // Leer archivo JSON
 const readTasks = () => {
     try {
@@ -26,12 +26,14 @@ const writeTasks = (tasks) => {
 };
 
 // Agregar nueva tarea
-const addTask = (titulo, descripcion) => {
+const addTask = async(titulo, descripcion) => {
+   try{ if(titulo===undefined)throw "El titulo es requerido";
+    if(descripcion===undefined)throw "La descripcion es requerida";
     const tasks = readTasks();
     const newTask = new Task(uuidv4(), titulo, descripcion, false);
     tasks.push(newTask);
-    writeTasks(tasks);
-    return newTask;
+    await writeTasks(tasks);
+    return newTask;}catch(err){throw "Error";}
 };
 
 // Obtener todas las tareas

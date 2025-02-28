@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/devbenjas1011fer/api-task#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
     "uuid": "^11.1.0"

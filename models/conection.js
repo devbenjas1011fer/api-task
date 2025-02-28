@@ -1,4 +1,4 @@
-const taskM = require("./task/methods")
+const taskM = require("./task/method")
 module.exports = {
     ...taskM, 
 };
